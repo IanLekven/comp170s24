@@ -19,5 +19,9 @@
 public class A01 {
     public static void main(String[] args) {
         // YOUR CODE HERE
+       String name = "Ian";
+       String movie = "Dune";
+       String town = "Boerne";
+       System.out.println("Hello, my name is " + name + ", I am from " + town + ", and my favorite movie is " + movie);
     } // method main
 } // class A01
