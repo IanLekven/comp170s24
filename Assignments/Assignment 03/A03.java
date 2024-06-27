@@ -15,8 +15,8 @@ public class A03 {
         };              
 
         // Test countOf
-        System.out.println(countOf(78, june)); // expect 2
-        System.out.println(countOf(-78, june)); // expect 0
+        System.out.println(countOf(june, 78)); // expect 2
+        System.out.println(countOf(june, -78)); // expect 0
 
         // Test find max/min
         System.out.println(findMax(july)); // expect 90
@@ -34,9 +34,15 @@ public class A03 {
      * @param target int value to count its occurences.
      * @return the number of times the specific value appears in the array.
      */
-    public static int countOf(int[] array, int target) {
-        int count = 0;
-        return count;
+    public static int countOf(int[] array, int target) {       
+        for (int i = 0; i < array.length; i++) {
+            int count = 1;
+            if (array[i] == target) {
+                int newCount = count+1;
+                return newCount;
+            }           
+        }
+       return 0;
     } // method countOf
 
     /**
@@ -46,6 +52,10 @@ public class A03 {
      */
     public static int findMax(int[] array) {
         int max = array[0];
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > max)
+                max = array[i];
+        }
         return max;
     } // method findMax
 
@@ -56,6 +66,10 @@ public class A03 {
      */
     public static int findMin(int[] array) {
         int min = array[0];
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < min)
+                min = array[i];
+        }
         return min;
     } // method findMin
 
@@ -67,6 +81,12 @@ public class A03 {
      */
     public static boolean isPresent(int target, int[] array) {
         boolean found = false;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == target) {
+                found = true;
+                return found;
+            }           
+        }
         return found;
     } // method contains
 
